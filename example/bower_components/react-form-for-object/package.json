@@ -1,0 +1,12 @@
+{
+  "name": "react-form-for",
+  "description": "A starter project for AngularJS working with ExpressJS",
+  "repository": "https://github.com/edshadi/react-form-for",
+  "devDependencies": {
+    "browserify": "~6.3.2",
+    "reactify": "~0.15.2",
+    "vinyl-source-stream": "~1.0.0",
+    "del": "~0.1.3",
+    "gulp": "~3.8.10"
+  }
+}

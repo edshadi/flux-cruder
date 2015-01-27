@@ -1,0 +1,11 @@
+{
+  "name": "react-form-for example",
+  "authors": [
+    "Ed Shadi <edshadi@gmail.com>"
+  ],
+  "description": "React FormFor example useage",
+  "devDependencies": {
+    "react": "~0.12.2",
+    "react-form-for": "../src"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "flux-cruder",
+  "version": "0.0.1",
+  "authors": [
+    "Ed Shadi <edshadi@gmail.com>"
+  ],
+  "description": "Easily create Flux and React CRUD actions for any resource",
+  "main": "flux-cruder.js",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "flux",
+    "react",
+    "crud",
+    "blog",
+    "cms"
+  ],
+  "license": "MIT",
+  "homepage": "fluxcruder.io",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "_source": "/Users/apprentice/Development/Github/opensource/flux-cruder/src",
+  "_target": "*",
+  "_originalSource": "../src"
+}

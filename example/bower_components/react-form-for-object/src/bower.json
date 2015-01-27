@@ -1,0 +1,27 @@
+{
+  "name": "react-form-for-object",
+  "version": "1.1.0",
+  "authors": [
+    "Ed Shadi <edshadi@gmail.com>"
+  ],
+  "description": "Rails inspired form builder that makes building forms in React a breeze.",
+  "main": "src/form-for.js",
+  "keywords": [
+    "react",
+    "addon",
+    "form",
+    "rails",
+    "flux"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests",
+    "node_modules"
+  ]
+}
