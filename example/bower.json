@@ -6,7 +6,7 @@
   "description": "Easily create Flux and React CRUD actions for any resource",
   "devDependencies": {
     "react": "~0.12.2",
-    "flux-cruder": "../src"
+    "flux-cruder": "../build"
   },
   "dependencies": {
     "react-form-for-object": "~1.1.0"

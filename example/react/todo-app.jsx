@@ -10,16 +10,16 @@ var TodoApp = new FluxCruder({
 var TodoActions = TodoApp.actions;
 var TodoStore = TodoApp.store;
 
-var TodoForm = React.createClass({displayName: "TodoForm",
+var TodoForm = React.createClass({
   render: function() {
     return (
-      React.createElement(FormFor, {object: this.props.object, options: this.props.options, errors: this.props.errors})
+      <FormFor object={this.props.object} options={this.props.options} errors={this.props.errors} />
     );
   }
 
 });
 
-var Todo = React.createClass({displayName: "Todo",
+var Todo = React.createClass({
   getInitialState: function() {
     return {
       editing: false
@@ -32,21 +32,21 @@ var Todo = React.createClass({displayName: "Todo",
   },
   render: function() {
     return (
-      React.createElement("div", {className: "todo"}, 
-        React.createElement("span", null, React.createElement("a", {href: "#", onClick: this.editTodo}, "Edit")), 
-        React.createElement("span", null, React.createElement("a", {href: "#", onClick: this.deleteTodo}, "Delete")), 
-        this.state.editing ? this.renderForm() : this.renderTodo()
-      )
+      <div className="todo">
+        <span><a href="#" onClick={this.editTodo}>Edit</a></span>
+        <span><a href="#" onClick={this.deleteTodo}>Delete</a></span>
+        {this.state.editing ? this.renderForm() : this.renderTodo()}
+      </div>
     );
   },
   renderTodo: function() {
-    return(React.createElement("div", {className: "todo-item"}, this.props.todo.title));
+    return(<div className='todo-item'>{this.props.todo.title}</div>);
   },
   renderForm: function() {
     var options = {
       onSubmit: this.props.handleEdit
     };
-    return(React.createElement(TodoForm, {object: this.props.todo, options: options, errors: this.props.errors}));
+    return(<TodoForm object={this.props.todo} options={options} errors={this.props.errors} />);
   },
   editTodo: function() {
     if(this.isMounted()) this.setState({ editing: !this.state.editing });
@@ -57,7 +57,7 @@ var Todo = React.createClass({displayName: "Todo",
 
 });
 
-var Todos = React.createClass({displayName: "Todos",
+var Todos = React.createClass({
   getInitialState: function() {
     return {
       todos: [],
@@ -72,16 +72,16 @@ var Todos = React.createClass({displayName: "Todos",
   },
   render: function() {
     return (
-      React.createElement("div", {className: "todos"}, 
-      this.renderForm(), 
-      this.renderTodos()
-      )
+      <div className="todos">
+      {this.renderForm()}
+      {this.renderTodos()}
+      </div>
     );
   },
   renderTodos: function() {
     var todos = [];
     this.state.todos.forEach(function(todo) {
-      todos.push(React.createElement(Todo, {key: todo.id, todo: todo, errors: this.state.errors, handleEdit: this.handleEdit, handleDelete: this.handleDelete}));
+      todos.push(<Todo key={todo.id} todo={todo} errors={this.state.errors} handleEdit={this.handleEdit} handleDelete={this.handleDelete} />);
     }.bind(this));
     return todos;
   },
@@ -90,7 +90,7 @@ var Todos = React.createClass({displayName: "Todos",
     var options = {
       onSubmit: this.handleSubmit
     };
-    return(React.createElement(TodoForm, {object: object, options: options, errors: this.state.errors}));
+    return(<TodoForm object={object} options={options} errors={this.state.errors} />);
   },
   handleSubmit: function(data) {
     TodoActions.create(data);
@@ -104,5 +104,5 @@ var Todos = React.createClass({displayName: "Todos",
 });
 
 window.onload = function() {
-  React.render(React.createElement(Todos, null), document.body);
+  React.render(<Todos />, document.body);
 }

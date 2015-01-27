@@ -26,7 +26,7 @@
     "test",
     "tests"
   ],
-  "_source": "/Users/apprentice/Development/Github/opensource/flux-cruder/src",
+  "_source": "/Users/apprentice/Development/Github/opensource/flux-cruder/build",
   "_target": "*",
-  "_originalSource": "../src"
+  "_originalSource": "../build"
 }
